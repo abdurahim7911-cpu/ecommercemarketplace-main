@@ -1,0 +1,3 @@
+update public.products set image_url = 'https://loremflickr.com/600/600/' || v.kw || '?lock=' || v.n
+from (values ('Wireless Headphones','headphones',11),('Smart Watch','smartwatch',12),('Bluetooth Speaker','speaker',13),('Leather Jacket','leather,jacket',14),('Running Sneakers','sneakers',15),('Ceramic Vase','vase',16),('Desk Lamp','lamp',17),('The Design Book','book',18),('Yoga Mat','yoga',19),('Skincare Set','cosmetics',20)) as v(name,kw,n)
+where products.name = v.name and products.seller_id is null;
